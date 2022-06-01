@@ -36,5 +36,4 @@ class PiratesController < ApplicationController
             { errors: ["Arggggh, that pirate does not exist"] }.to_json
         end
     end
-
 end
