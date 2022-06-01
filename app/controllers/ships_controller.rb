@@ -12,4 +12,6 @@ class ShipsController < ApplicationController
             { errors: ship.errors.full_messages }.to_json
         end
     end
+
+    
 end
