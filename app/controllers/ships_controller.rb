@@ -1,11 +1,16 @@
 class ShipsController < ApplicationController
     get "/ships" do
-        ship = Ship.all 
-        ship.to_json
+        ship = Ship.all
+        ship.to_json(include: [pirates: {only: [:name, :title ]}], except: [:created_at, :updated_at])
+    end
+
+    get "/ships/:id" do 
+        ship = Ship.find_by_id(params[:id])
+        ship.to_json(include: [pirates: {only: [:name, :title ]}], except: [:created_at, :updated_at])
     end
 
     post "/ships" do
-        ship = Ship.new(params[:ship])
+        ship = Ship.new(params)
         if ship.save
             ship.to_json
         else
@@ -13,5 +18,22 @@ class ShipsController < ApplicationController
         end
     end
 
+    patch "/ships/:id" do
+        ship = Ship.find_by_id(params[:id])
+        if ship.update(params)
+            ship.to_json
+        else
+            { errors: ships.errors.full_messages }.to_json
+        end
+    end
     
+    delete "/ships/:id" do
+        ship = Ship.find_by_id(params[:id])
+        if ship
+            ship.destroy
+            ship.to_json
+        else
+            { errors: ["Ship does not exist"]}.to_json
+        end
+    end
 end
