@@ -10,14 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_01_013329) do
+ActiveRecord::Schema.define(version: 2022_06_14_013728) do
 
   create_table "pirates", force: :cascade do |t|
     t.string "name"
-    t.string "ship_name"
     t.string "title"
-    t.string "status"
-    t.string "notoriety"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "ship_id"

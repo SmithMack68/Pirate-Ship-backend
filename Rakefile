@@ -14,7 +14,7 @@ task :server do
 
   # rerun allows auto-reloading of server when files are updated
   # -b runs in the background (include it or binding.pry won't work)
-  exec "bundle exec rerun -b '#{rackup}'"
+  exec "thin -R config.ru -a 127.0.0.1 -p 9292 start"
 end
 
 desc "Start the console"
