@@ -11,10 +11,10 @@ the_william = Ship.create(name: "The William", ship_type: "Sloop", ranking: "Arm
 
 
 
-blackbeard = Pirate.create(name: "Blackbeard", title: "Captain", ship_id: 2)
-captain_kidd = Pirate.create(name: "Captain Kidd", title: "Captain", ship_id: 3)
-jack_sparrow = Pirate.create(name: "Jack Sparrow", title: "Captain", ship_id: 1)
-kit = Pirate.create(name: "Kit", title: "First Mate", ship_id: 1 )
-anne_bonny = Pirate.create(name: "Anne Bonny", title: "Pirate Queen", ship_id: 4)
-calico_jack = Pirate.create(name: "Calico Jack", title: "Captain", ship_id: 5)
+blackbeard = Pirate.create(name: "Blackbeard", title: "Captain", ship_id: 2, ship_name: "Queen Anne's Revenge")
+captain_kidd = Pirate.create(name: "Captain Kidd", title: "Captain", ship_id: 3, ship_name: "Adventure Galley")
+jack_sparrow = Pirate.create(name: "Jack Sparrow", title: "Captain", ship_id: 1, ship_name: "The Black Pearl")
+kit = Pirate.create(name: "Kit", title: "First Mate", ship_id: 1, ship_name: "The Black Pearl" )
+anne_bonny = Pirate.create(name: "Anne Bonny", title: "Pirate Queen", ship_id: 4, ship_name: "Jolly Roger")
+calico_jack = Pirate.create(name: "Calico Jack", title: "Captain", ship_id: 5, ship_name: "The William")
 puts "✅ Done seeding!"
