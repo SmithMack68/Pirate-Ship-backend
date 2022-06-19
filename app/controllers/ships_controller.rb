@@ -13,12 +13,11 @@ class ShipsController < ApplicationController
     end
 
     post "/ships" do
-        ship = Ship.new(params)
-        if ship.save
-            ship.to_json
-        else
-            { errors: ship.errors.full_messages }.to_json
-        end
+        @ship = Ship.create(params)
+        @ship.to_json
+        # else
+        #     { errors: ship.errors.full_messages }.to_json
+        # end
     end
 
     patch "/ships/:id" do

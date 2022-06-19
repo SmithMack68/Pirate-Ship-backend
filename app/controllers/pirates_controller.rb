@@ -10,12 +10,11 @@ class PiratesController < ApplicationController
     end
 
     post "/pirates" do
-        pirate = Pirate.new(params)
-        if pirate.save
+        pirate = Pirate.create(params)
             pirate.to_json
-        else
-            { errors: pirate.errors.full_messages }.to_json
-        end
+        # else
+        #     { errors: pirate.errors.full_messages }.to_json
+        # end
     end
 
     post "/ships/:ship_id/pirates" do
@@ -28,11 +27,11 @@ class PiratesController < ApplicationController
 
     patch "/pirates/:id" do
         pirate = Pirate.find_by_id(params[:id])
-        if pirate.update(params)
+         pirate.update(params)
             pirate.to_json
-        else
-            { errors: pirates.errors.full_messages }.to_json
-        end
+        # else
+        #     { errors: pirates.errors.full_messages }.to_json
+        # end
     end
 
     delete "/pirates/:id" do
