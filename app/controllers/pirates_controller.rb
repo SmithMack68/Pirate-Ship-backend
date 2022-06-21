@@ -12,13 +12,10 @@ class PiratesController < ApplicationController
     post "/pirates" do
         pirate = Pirate.create(params)
             pirate.to_json
-        # else
-        #     { errors: pirate.errors.full_messages }.to_json
-        # end
     end
 
     post "/ships/:ship_id/pirates" do
-        find_ship
+        @ship = Ship.find_by_id(params[:ship_id])
         @pirate = @ship.pirates.build(params)
         @pirate.save
         @pirate.to_json
@@ -44,11 +41,5 @@ class PiratesController < ApplicationController
         end
     end
 
-    private
-
-    def find_ship 
-        @ship = Ship.find_by_id(params[:ship_id])
-    end
-
-         
+      
 end
