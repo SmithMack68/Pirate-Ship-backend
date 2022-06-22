@@ -1,12 +1,12 @@
 class PiratesController < ApplicationController
     get "/pirates" do
         pirate = Pirate.all 
-        pirate.to_json(except: [:ship_id, :created_at, :updated_at])
+        pirate.to_json(except: [:created_at, :updated_at])
     end
 
     get "/pirates/:id" do
         pirate = Pirate.find_by_id(params[:id])
-        pirate.to_json(except: [:ship_id, :created_at, :updated_at]) 
+        pirate.to_json(except: [:created_at, :updated_at]) 
     end
 
     post "/pirates" do
