@@ -2,6 +2,7 @@
 This is the backend for a Pirate Ship App
 created for Flatiron School to show case skills
 in Ruby and Active Record
+Pirate Ships Phase-3 Project for the Flatiron School in Software Engineering. Features a React v6 frontend and an Active Record/Sinatra/Rake Ruby backend.  Pick a pirate ship and then add your crew. Be careful to not get sunk or keelhauled. Features historical real ships and pirates.
 
 ### Requirements
 * ruby 2.6.1
